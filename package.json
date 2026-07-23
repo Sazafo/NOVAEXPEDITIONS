@@ -1,0 +1,31 @@
+{
+  "name": "novaexpeditions",
+  "version": "1.0.0",
+  "description": "Aca se va a estar desarrollando el proyecto de Base de Datos NOSQL",
+  "main": "index.js",
+"scripts": {
+  "start": "node src/app.js",
+  "dev": "nodemon src/app.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sazafo/NOVAEXPEDITIONS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sazafo/NOVAEXPEDITIONS/issues"
+  },
+  "homepage": "https://github.com/Sazafo/NOVAEXPEDITIONS#readme",
+  "dependencies": {
+    "body-parser": "^2.3.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
