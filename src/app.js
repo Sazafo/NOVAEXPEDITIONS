@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 const conectarDB = require('./config/db');
 const paqueteRoutes = require('./routes/paqueteRoutes');
@@ -13,6 +14,9 @@ conectarDB();
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
+
+// Servir archivos estáticos del frontend (carpeta public)
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Rutas
 app.use('/api/paquetes', paqueteRoutes);
