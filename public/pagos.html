@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Nova Expeditions - Pagos</title>
+
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container">
+
+        <a
+            class="navbar-brand"
+            href="index.html">
+
+            Nova Expeditions
+
+        </a>
+
+        <div class="navbar-nav ms-auto">
+
+            <a
+                class="nav-link"
+                href="index.html">
+
+                Paquetes
+
+            </a>
+
+            <a
+                class="nav-link"
+                href="clientes.html">
+
+                Clientes
+
+            </a>
+
+            <a
+                class="nav-link"
+                href="reservaciones.html">
+
+                Reservaciones
+
+            </a>
+
+            <a
+                class="nav-link active"
+                href="pagos.html">
+
+                Pagos
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="container my-4">
+
+    <h2 class="mb-4">
+        Gestión de Pagos
+    </h2>
+
+    <div id="alertContainer"></div>
+
+    <div class="card mb-4">
+
+        <div class="card-header">
+
+            <span id="formTitulo">
+                Nuevo Pago
+            </span>
+
+        </div>
+
+        <div class="card-body">
+
+            <form id="formPago">
+
+                <input
+                    type="hidden"
+                    id="pagoId">
+
+                <div class="row g-3">
+
+                    <!-- Cliente -->
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Cliente
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="cliente"
+                            required>
+
+                            <option value="">
+                                Seleccione un cliente
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Reservación -->
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Reservación
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="reservacion"
+                            required>
+
+                            <option value="">
+                                Primero seleccione un cliente
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Monto -->
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Monto
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="monto"
+                            min="0"
+                            readonly
+                            required>
+
+                    </div>
+
+                    <!-- Método -->
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Método de pago
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="metodoPago"
+                            required>
+
+                            <option value="Tarjeta">
+                                Tarjeta
+                            </option>
+
+                            <option value="Transferencia">
+                                Transferencia
+                            </option>
+
+                            <option value="Efectivo">
+                                Efectivo
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Fecha -->
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Fecha de pago
+                        </label>
+
+                        <input
+                            type="date"
+                            class="form-control"
+                            id="fechaPago"
+                            required>
+
+                    </div>
+
+                    <!-- Estado -->
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Estado
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="estado"
+                            required>
+
+                            <option value="Pendiente">
+                                Pendiente
+                            </option>
+
+                            <option value="Pagado">
+                                Pagado
+                            </option>
+
+                            <option value="Rechazado">
+                                Rechazado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="mt-3">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="btnGuardar">
+
+                        Guardar
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="btnCancelar">
+
+                        Cancelar
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-header">
+            Pagos Registrados
+        </div>
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-striped">
+
+                <thead>
+
+                <tr>
+
+                    <th>Cliente</th>
+                    <th>Reservación</th>
+                    <th>Monto</th>
+                    <th>Método</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="tablaPagos"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="js/pagos.js"></script>
+
+</body>
+
+</html>

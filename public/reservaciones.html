@@ -8,13 +8,11 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Nova Expeditions - Paquetes</title>
+    <title>Nova Expeditions - Reservaciones</title>
 
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -30,7 +28,7 @@
 
         <div class="navbar-nav ms-auto">
 
-            <a class="nav-link active" href="index.html">
+            <a class="nav-link" href="index.html">
                 Paquetes
             </a>
 
@@ -38,7 +36,7 @@
                 Clientes
             </a>
 
-            <a class="nav-link" href="reservaciones.html">
+            <a class="nav-link active" href="reservaciones.html">
                 Reservaciones
             </a>
 
@@ -55,91 +53,120 @@
 <div class="container my-4">
 
     <h2 class="mb-4">
-        Gestión de Paquetes Turísticos
+        Gestión de Reservaciones
     </h2>
 
     <div id="alertContainer"></div>
 
-    <div class="card mb-4" id="seccionFormulario">
+    <div class="card mb-4">
 
         <div class="card-header">
 
             <span id="formTitulo">
-                Nuevo Paquete
+                Nueva Reservación
             </span>
 
         </div>
 
         <div class="card-body">
 
-            <form id="formPaquete">
+            <form id="formReservacion">
 
                 <input
                     type="hidden"
-                    id="paqueteId">
+                    id="reservacionId">
 
                 <div class="row g-3">
 
+                    <!-- Cliente -->
                     <div class="col-md-6">
 
                         <label class="form-label">
-                            Nombre
+                            Cliente
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="cliente"
+                            required>
+
+                            <option value="">
+                                Seleccione un cliente
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Paquete -->
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Paquete
+                        </label>
+
+                        <select
+                            class="form-select"
+                            id="paquete"
+                            required>
+
+                            <option value="">
+                                Seleccione un paquete
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Fecha -->
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Fecha de reserva
                         </label>
 
                         <input
-                            type="text"
+                            type="date"
                             class="form-control"
-                            id="nombre"
+                            id="fechaReserva"
                             required>
 
                     </div>
 
-                    <div class="col-md-6">
-
-                        <label class="form-label">
-                            Destino
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="destino"
-                            required>
-
-                    </div>
-
+                    <!-- Personas -->
                     <div class="col-md-3">
 
                         <label class="form-label">
-                            Duración (días)
+                            Cantidad de personas
                         </label>
 
                         <input
                             type="number"
                             class="form-control"
-                            id="duracionDias"
+                            id="cantidadPersonas"
                             min="1"
                             required>
 
                     </div>
 
+                    <!-- Total -->
                     <div class="col-md-3">
 
                         <label class="form-label">
-                            Precio
+                            Total
                         </label>
 
                         <input
                             type="number"
                             class="form-control"
-                            id="precio"
+                            id="total"
                             min="0"
-                            step="0.01"
                             required>
 
                     </div>
 
-                    <div class="col-md-3">
+                    <!-- Estado -->
+                    <div class="col-md-2">
 
                         <label class="form-label">
                             Estado
@@ -150,30 +177,19 @@
                             id="estado"
                             required>
 
-                            <option value="Activo">
-                                Activo
+                            <option value="Pendiente">
+                                Pendiente
                             </option>
 
-                            <option value="Inactivo">
-                                Inactivo
+                            <option value="Confirmada">
+                                Confirmada
+                            </option>
+
+                            <option value="Cancelada">
+                                Cancelada
                             </option>
 
                         </select>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <label class="form-label">
-                            Incluye
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="incluye"
-                            placeholder="Hotel, Transporte, Seguro"
-                            required>
 
                     </div>
 
@@ -210,11 +226,7 @@
     <div class="card">
 
         <div class="card-header">
-
-            <span id="tituloLista">
-                Paquetes Registrados
-            </span>
-
+            Reservaciones Registradas
         </div>
 
         <div class="card-body table-responsive">
@@ -223,21 +235,21 @@
 
                 <thead>
 
-                    <tr>
+                <tr>
 
-                        <th>Nombre</th>
-                        <th>Destino</th>
-                        <th>Duración</th>
-                        <th>Precio</th>
-                        <th>Incluye</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
+                    <th>Cliente</th>
+                    <th>Paquete</th>
+                    <th>Fecha</th>
+                    <th>Personas</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
 
-                    </tr>
+                </tr>
 
                 </thead>
 
-                <tbody id="tablaPaquetes"></tbody>
+                <tbody id="tablaReservaciones"></tbody>
 
             </table>
 
@@ -251,7 +263,7 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js">
 </script>
 
-<script src="app.js"></script>
+<script src="js/reservaciones.js"></script>
 
 </body>
 

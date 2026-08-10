@@ -5,6 +5,9 @@ const path = require('path');
 
 const conectarDB = require('./config/db');
 const paqueteRoutes = require('./routes/paqueteRoutes');
+const clienteRoutes = require('./routes/clienteRoutes');
+const reservacionRoutes = require('./routes/reservacionRoutes');
+const pagoRoutes = require('./routes/pagoRoutes');
 
 const app = express();
 
@@ -20,6 +23,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 
 // Rutas
 app.use('/api/paquetes', paqueteRoutes);
+app.use('/api/clientes', clienteRoutes);
+app.use('/api/reservaciones', reservacionRoutes);
+app.use('/api/pagos', pagoRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {

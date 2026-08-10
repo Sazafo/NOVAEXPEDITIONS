@@ -8,13 +8,11 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Nova Expeditions - Paquetes</title>
+    <title>Nova Expeditions - Clientes</title>
 
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
 
 </head>
 
@@ -30,11 +28,11 @@
 
         <div class="navbar-nav ms-auto">
 
-            <a class="nav-link active" href="index.html">
+            <a class="nav-link" href="index.html">
                 Paquetes
             </a>
 
-            <a class="nav-link" href="clientes.html">
+            <a class="nav-link active" href="clientes.html">
                 Clientes
             </a>
 
@@ -55,28 +53,26 @@
 <div class="container my-4">
 
     <h2 class="mb-4">
-        Gestión de Paquetes Turísticos
+        Gestión de Clientes
     </h2>
 
     <div id="alertContainer"></div>
 
-    <div class="card mb-4" id="seccionFormulario">
+    <div class="card mb-4">
 
         <div class="card-header">
 
             <span id="formTitulo">
-                Nuevo Paquete
+                Nuevo Cliente
             </span>
 
         </div>
 
         <div class="card-body">
 
-            <form id="formPaquete">
+            <form id="formCliente">
 
-                <input
-                    type="hidden"
-                    id="paqueteId">
+                <input type="hidden" id="clienteId">
 
                 <div class="row g-3">
 
@@ -97,49 +93,61 @@
                     <div class="col-md-6">
 
                         <label class="form-label">
-                            Destino
+                            Correo
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="correo"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Teléfono
                         </label>
 
                         <input
                             type="text"
                             class="form-control"
-                            id="destino"
+                            id="telefono"
                             required>
 
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-4">
 
                         <label class="form-label">
-                            Duración (días)
+                            País
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="pais"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-2">
+
+                        <label class="form-label">
+                            Edad
                         </label>
 
                         <input
                             type="number"
                             class="form-control"
-                            id="duracionDias"
+                            id="edad"
                             min="1"
                             required>
 
                     </div>
 
-                    <div class="col-md-3">
-
-                        <label class="form-label">
-                            Precio
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="precio"
-                            min="0"
-                            step="0.01"
-                            required>
-
-                    </div>
-
-                    <div class="col-md-3">
+                    <div class="col-md-2">
 
                         <label class="form-label">
                             Estado
@@ -159,21 +167,6 @@
                             </option>
 
                         </select>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <label class="form-label">
-                            Incluye
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="incluye"
-                            placeholder="Hotel, Transporte, Seguro"
-                            required>
 
                     </div>
 
@@ -210,11 +203,7 @@
     <div class="card">
 
         <div class="card-header">
-
-            <span id="tituloLista">
-                Paquetes Registrados
-            </span>
-
+            Clientes Registrados
         </div>
 
         <div class="card-body table-responsive">
@@ -226,10 +215,10 @@
                     <tr>
 
                         <th>Nombre</th>
-                        <th>Destino</th>
-                        <th>Duración</th>
-                        <th>Precio</th>
-                        <th>Incluye</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>País</th>
+                        <th>Edad</th>
                         <th>Estado</th>
                         <th>Acciones</th>
 
@@ -237,7 +226,7 @@
 
                 </thead>
 
-                <tbody id="tablaPaquetes"></tbody>
+                <tbody id="tablaClientes"></tbody>
 
             </table>
 
@@ -251,7 +240,7 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js">
 </script>
 
-<script src="app.js"></script>
+<script src="js/clientes.js"></script>
 
 </body>
 
