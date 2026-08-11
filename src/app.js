@@ -8,6 +8,9 @@ const paqueteRoutes = require('./routes/paqueteRoutes');
 const clienteRoutes = require('./routes/clienteRoutes');
 const reservacionRoutes = require('./routes/reservacionRoutes');
 const pagoRoutes = require('./routes/pagoRoutes');
+const destinoRoutes = require('./routes/destinoRoutes');
+const naveRoutes = require('./routes/naveRoutes');
+const actividadRoutes = require('./routes/actividadRoutes');
 
 const app = express();
 
@@ -26,6 +29,9 @@ app.use('/api/paquetes', paqueteRoutes);
 app.use('/api/clientes', clienteRoutes);
 app.use('/api/reservaciones', reservacionRoutes);
 app.use('/api/pagos', pagoRoutes);
+app.use('/api/destinos', destinoRoutes);
+app.use('/api/naves', naveRoutes);
+app.use('/api/actividades', actividadRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {
