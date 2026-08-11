@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Expeditions - Destinos</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-4">
+<h2>Gestión de Destinos</h2>
+<div id="alertContainer"></div>
+<form id="formDestino" class="card card-body mb-4">
+<input type="hidden" id="destinoId">
+<input class="form-control mb-2" id="nombre" placeholder="Nombre" required>
+<input class="form-control mb-2" id="ubicacion" placeholder="Ubicación" required>
+<input class="form-control mb-2" id="descripcion" placeholder="Descripción" required>
+<select class="form-select mb-2" id="estado"><option>Activo</option><option>Inactivo</option></select>
+<button class="btn btn-primary" id="btnGuardar">Guardar</button>
+<button type="button" class="btn btn-secondary mt-2" id="btnCancelar">Cancelar</button>
+</form>
+<table class="table table-striped"><thead><tr><th>Nombre</th><th>Ubicación</th><th>Descripción</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="tablaDestinos"></tbody></table>
+</div>
+<script src="js/destinos.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Expeditions - Naves</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-4">
+<h2>Gestión de Naves</h2>
+<div id="alertContainer"></div>
+<form id="formNave" class="card card-body mb-4">
+<input type="hidden" id="naveId">
+<input class="form-control mb-2" id="nombre" placeholder="Nombre" required>
+<input class="form-control mb-2" id="modelo" placeholder="Modelo" required>
+<input type="number" class="form-control mb-2" id="capacidad" placeholder="Capacidad" required>
+<select class="form-select mb-2" id="estado"><option>Disponible</option><option>Mantenimiento</option><option>Inactiva</option></select>
+<button class="btn btn-primary" id="btnGuardar">Guardar</button>
+<button type="button" class="btn btn-secondary mt-2" id="btnCancelar">Cancelar</button>
+</form>
+<table class="table table-striped"><thead><tr><th>Nombre</th><th>Modelo</th><th>Capacidad</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="tablaNaves"></tbody></table>
+</div>
+<script src="js/naves.js"></script>
+</body>
+</html>
