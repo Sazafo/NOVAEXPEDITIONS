@@ -2,256 +2,362 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Nova Expeditions - Paquetes</title>
+    <title>Nova Expeditions</title>
 
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
 
+        .encabezado {
+            padding: 55px 0 35px 0;
+            text-align: center;
+        }
+
+        .modulo-card {
+            height: 100%;
+            transition: 0.2s;
+        }
+
+        .modulo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .modulo-card .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 190px;
+        }
+
+        footer {
+            margin-top: 60px;
+        }
+    </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                Nova Expeditions
+            </a>
+
+            <span class="navbar-text text-light">
+                Sistema de Gestión
+            </span>
+
+        </div>
+
+    </nav>
+
 
     <div class="container">
 
-        <a class="navbar-brand" href="index.html">
-            Nova Expeditions
-        </a>
+        <!-- ENCABEZADO -->
 
-        <div class="navbar-nav ms-auto">
+        <div class="encabezado">
 
-            <a class="nav-link active" href="index.html">
-                Paquetes
-            </a>
+            <h1 class="fw-bold">
+                NOVA EXPEDITIONS
+            </h1>
 
-            <a class="nav-link" href="clientes.html">
-                Clientes
-            </a>
+            <h5 class="text-muted">
+                Sistema de Gestión de Viajes Espaciales
+            </h5>
 
-            <a class="nav-link" href="reservaciones.html">
-                Reservaciones
-            </a>
-
-            <a class="nav-link" href="pagos.html">
-                Pagos
-            </a>
+            <p class="mt-3">
+                Seleccione el módulo que desea administrar.
+            </p>
 
         </div>
 
-    </div>
 
-</nav>
+        <!-- MÓDULOS -->
 
-<div class="container my-4">
+        <div class="row g-4">
 
-    <h2 class="mb-4">
-        Gestión de Paquetes Turísticos
-    </h2>
+            <!-- PAQUETES -->
 
-    <div id="alertContainer"></div>
+            <div class="col-md-4">
 
-    <div class="card mb-4" id="seccionFormulario">
+                <div class="card shadow-sm modulo-card">
 
-        <div class="card-header">
+                    <div class="card-body text-center">
 
-            <span id="formTitulo">
-                Nuevo Paquete
-            </span>
+                        <div>
 
-        </div>
+                            <h4>
+                                Paquetes
+                            </h4>
 
-        <div class="card-body">
+                            <p class="text-muted">
+                                Administración de paquetes
+                                turísticos espaciales.
+                            </p>
 
-            <form id="formPaquete">
+                        </div>
 
-                <input
-                    type="hidden"
-                    id="paqueteId">
+                        <a
+                            href="paquetes.html"
+                            class="btn btn-primary">
 
-                <div class="row g-3">
+                            Ingresar
 
-                    <div class="col-md-6">
-
-                        <label class="form-label">
-                            Nombre
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="nombre"
-                            required>
-
-                    </div>
-
-                    <div class="col-md-6">
-
-                        <label class="form-label">
-                            Destino
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="destino"
-                            required>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <label class="form-label">
-                            Duración (días)
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="duracionDias"
-                            min="1"
-                            required>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <label class="form-label">
-                            Precio
-                        </label>
-
-                        <input
-                            type="number"
-                            class="form-control"
-                            id="precio"
-                            min="0"
-                            step="0.01"
-                            required>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <label class="form-label">
-                            Estado
-                        </label>
-
-                        <select
-                            class="form-select"
-                            id="estado"
-                            required>
-
-                            <option value="Activo">
-                                Activo
-                            </option>
-
-                            <option value="Inactivo">
-                                Inactivo
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="col-md-3">
-
-                        <label class="form-label">
-                            Incluye
-                        </label>
-
-                        <input
-                            type="text"
-                            class="form-control"
-                            id="incluye"
-                            placeholder="Hotel, Transporte, Seguro"
-                            required>
+                        </a>
 
                     </div>
 
                 </div>
 
-                <div class="mt-3">
+            </div>
 
-                    <button
-                        type="submit"
-                        class="btn btn-primary"
-                        id="btnGuardar">
 
-                        Guardar
+            <!-- CLIENTES -->
 
-                    </button>
+            <div class="col-md-4">
 
-                    <button
-                        type="button"
-                        class="btn btn-secondary"
-                        id="btnCancelar">
+                <div class="card shadow-sm modulo-card">
 
-                        Cancelar
+                    <div class="card-body text-center">
 
-                    </button>
+                        <div>
+
+                            <h4>
+                                Clientes
+                            </h4>
+
+                            <p class="text-muted">
+                                Registro y administración
+                                de los clientes.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="clientes.html"
+                            class="btn btn-primary">
+
+                            Ingresar
+
+                        </a>
+
+                    </div>
 
                 </div>
 
-            </form>
+            </div>
+
+
+            <!-- RESERVACIONES -->
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm modulo-card">
+
+                    <div class="card-body text-center">
+
+                        <div>
+
+                            <h4>
+                                Reservaciones
+                            </h4>
+
+                            <p class="text-muted">
+                                Gestión de reservaciones
+                                de viajes espaciales.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="reservaciones.html"
+                            class="btn btn-primary">
+
+                            Ingresar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAGOS -->
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm modulo-card">
+
+                    <div class="card-body text-center">
+
+                        <div>
+
+                            <h4>
+                                Pagos
+                            </h4>
+
+                            <p class="text-muted">
+                                Administración de pagos
+                                asociados a reservaciones.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="pagos.html"
+                            class="btn btn-primary">
+
+                            Ingresar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESTINOS -->
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm modulo-card">
+
+                    <div class="card-body text-center">
+
+                        <div>
+
+                            <h4>
+                                Destinos
+                            </h4>
+
+                            <p class="text-muted">
+                                Administración de los
+                                destinos espaciales.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="destinos.html"
+                            class="btn btn-primary">
+
+                            Ingresar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NAVES -->
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm modulo-card">
+
+                    <div class="card-body text-center">
+
+                        <div>
+
+                            <h4>
+                                Naves
+                            </h4>
+
+                            <p class="text-muted">
+                                Gestión de las naves
+                                disponibles para los viajes.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="naves.html"
+                            class="btn btn-primary">
+
+                            Ingresar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIVIDADES -->
+
+            <div class="col-md-4">
+
+                <div class="card shadow-sm modulo-card">
+
+                    <div class="card-body text-center">
+
+                        <div>
+
+                            <h4>
+                                Actividades
+                            </h4>
+
+                            <p class="text-muted">
+                                Gestión de actividades
+                                disponibles en los destinos.
+                            </p>
+
+                        </div>
+
+                        <a
+                            href="actividades.html"
+                            class="btn btn-primary">
+
+                            Ingresar
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
-    <div class="card">
 
-        <div class="card-header">
+    <!-- FOOTER -->
 
-            <span id="tituloLista">
-                Paquetes Registrados
-            </span>
+    <footer class="bg-dark text-light text-center py-3">
 
-        </div>
+        <p class="mb-0">
+            Nova Expeditions - Sistema de Gestión
+        </p>
 
-        <div class="card-body table-responsive">
+    </footer>
 
-            <table class="table table-striped">
 
-                <thead>
-
-                    <tr>
-
-                        <th>Nombre</th>
-                        <th>Destino</th>
-                        <th>Duración</th>
-                        <th>Precio</th>
-                        <th>Incluye</th>
-                        <th>Estado</th>
-                        <th>Acciones</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="tablaPaquetes"></tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-</div>
-
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js">
-</script>
-
-<script src="app.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js">
+    </script>
 
 </body>
 
