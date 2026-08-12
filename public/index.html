@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nova Expeditions</title>
+    <title>Nova Expeditions | Panel Administrativo</title>
 
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
@@ -13,143 +13,278 @@
 
     <style>
         body {
-            background-color: #f5f5f5;
+            background: #f4f6f9;
+            min-height: 100vh;
         }
 
-        .encabezado {
-            padding: 55px 0 35px 0;
-            text-align: center;
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
-        .modulo-card {
+        .hero {
+            background: linear-gradient(135deg, #111827, #1f2937);
+            color: white;
+            padding: 45px 0;
+        }
+
+        .hero h1 {
+            font-weight: 700;
+        }
+
+        .stat-card {
+            border: none;
+            border-radius: 14px;
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .stat-number {
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .module-card {
+            border: none;
+            border-radius: 14px;
             height: 100%;
-            transition: 0.2s;
+            transition: all 0.2s;
         }
 
-        .modulo-card:hover {
-            transform: translateY(-5px);
+        .module-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
         }
 
-        .modulo-card .card-body {
+        .module-card .card-body {
+            min-height: 190px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 190px;
+        }
+
+        .module-card .btn {
+            margin-top: auto;
+        }
+
+        .category {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #6c757d;
+            letter-spacing: 1px;
         }
 
         footer {
             margin-top: 60px;
         }
     </style>
+
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-dark bg-dark">
-
-        <div class="container">
-
-            <a class="navbar-brand" href="index.html">
-                Nova Expeditions
-            </a>
-
-            <span class="navbar-text text-light">
-                Sistema de Gestión
-            </span>
-
-        </div>
-
-    </nav>
-
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark">
 
     <div class="container">
 
-        <!-- ENCABEZADO -->
+        <a class="navbar-brand" href="index.html">
+            NOVA EXPEDITIONS
+        </a>
 
-        <div class="encabezado">
+        <span class="navbar-text text-light">
+            Panel Administrativo
+        </span>
 
-            <h1 class="fw-bold">
-                NOVA EXPEDITIONS
-            </h1>
+    </div>
 
-            <h5 class="text-muted">
-                Sistema de Gestión de Viajes Espaciales
-            </h5>
+</nav>
 
-            <p class="mt-3">
-                Seleccione el módulo que desea administrar.
-            </p>
+
+<!-- ENCABEZADO -->
+<section class="hero">
+
+    <div class="container">
+
+        <h1>
+            Centro de Operaciones
+        </h1>
+
+        <p class="mb-0">
+            Bienvenido al sistema administrativo de Nova Expeditions.
+            Gestione desde un único lugar las operaciones comerciales,
+            los servicios turísticos y los recursos necesarios para
+            los viajes espaciales.
+        </p>
+
+    </div>
+
+</section>
+
+
+<main class="container my-5">
+
+    <!-- RESUMEN -->
+    <div class="mb-5">
+
+        <p class="category">
+            Resumen general
+        </p>
+
+        <h3 class="section-title">
+            Estado del sistema
+        </h3>
+
+        <div class="row g-3">
+
+            <div class="col-md-4 col-lg-2">
+                <div class="card shadow-sm stat-card">
+                    <div class="card-body text-center">
+                        <div
+                            class="stat-number"
+                            id="contadorClientes">
+                            -
+                        </div>
+                        <div class="text-muted">
+                            Clientes
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+                <div class="card shadow-sm stat-card">
+                    <div class="card-body text-center">
+                        <div
+                            class="stat-number"
+                            id="contadorReservaciones">
+                            -
+                        </div>
+                        <div class="text-muted">
+                            Reservaciones
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+                <div class="card shadow-sm stat-card">
+                    <div class="card-body text-center">
+                        <div
+                            class="stat-number"
+                            id="contadorPagos">
+                            -
+                        </div>
+                        <div class="text-muted">
+                            Pagos
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+                <div class="card shadow-sm stat-card">
+                    <div
+                        class="card-body text-center">
+
+                        <div
+                            class="stat-number"
+                            id="contadorPaquetes">
+                            -
+                        </div>
+
+                        <div class="text-muted">
+                            Paquetes
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+                <div class="card shadow-sm stat-card">
+                    <div class="card-body text-center">
+
+                        <div
+                            class="stat-number"
+                            id="contadorDestinos">
+                            -
+                        </div>
+
+                        <div class="text-muted">
+                            Destinos
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+                <div class="card shadow-sm stat-card">
+                    <div class="card-body text-center">
+
+                        <div
+                            class="stat-number"
+                            id="contadorNaves">
+                            -
+                        </div>
+
+                        <div class="text-muted">
+                            Naves
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
         </div>
 
+    </div>
 
-        <!-- MÓDULOS -->
+
+    <!-- GESTIÓN COMERCIAL -->
+
+    <section class="mb-5">
+
+        <p class="category">
+            Gestión Comercial
+        </p>
+
+        <h3 class="section-title">
+            Clientes y operaciones comerciales
+        </h3>
 
         <div class="row g-4">
 
-            <!-- PAQUETES -->
-
-            <div class="col-md-4">
-
-                <div class="card shadow-sm modulo-card">
-
-                    <div class="card-body text-center">
-
-                        <div>
-
-                            <h4>
-                                Paquetes
-                            </h4>
-
-                            <p class="text-muted">
-                                Administración de paquetes
-                                turísticos espaciales.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="paquetes.html"
-                            class="btn btn-primary">
-
-                            Ingresar
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
             <!-- CLIENTES -->
+            <div class="col-md-6 col-lg-3">
 
-            <div class="col-md-4">
+                <div class="card shadow-sm module-card">
 
-                <div class="card shadow-sm modulo-card">
+                    <div class="card-body">
 
-                    <div class="card-body text-center">
+                        <h4>
+                            Clientes
+                        </h4>
 
-                        <div>
-
-                            <h4>
-                                Clientes
-                            </h4>
-
-                            <p class="text-muted">
-                                Registro y administración
-                                de los clientes.
-                            </p>
-
-                        </div>
+                        <p class="text-muted">
+                            Registro y administración de
+                            los clientes de Nova Expeditions.
+                        </p>
 
                         <a
                             href="clientes.html"
                             class="btn btn-primary">
 
-                            Ingresar
+                            Gestionar clientes
 
                         </a>
 
@@ -161,31 +296,26 @@
 
 
             <!-- RESERVACIONES -->
+            <div class="col-md-6 col-lg-3">
 
-            <div class="col-md-4">
+                <div class="card shadow-sm module-card">
 
-                <div class="card shadow-sm modulo-card">
+                    <div class="card-body">
 
-                    <div class="card-body text-center">
+                        <h4>
+                            Reservaciones
+                        </h4>
 
-                        <div>
-
-                            <h4>
-                                Reservaciones
-                            </h4>
-
-                            <p class="text-muted">
-                                Gestión de reservaciones
-                                de viajes espaciales.
-                            </p>
-
-                        </div>
+                        <p class="text-muted">
+                            Administración de las reservas
+                            realizadas por los clientes.
+                        </p>
 
                         <a
                             href="reservaciones.html"
                             class="btn btn-primary">
 
-                            Ingresar
+                            Gestionar reservas
 
                         </a>
 
@@ -197,31 +327,26 @@
 
 
             <!-- PAGOS -->
+            <div class="col-md-6 col-lg-3">
 
-            <div class="col-md-4">
+                <div class="card shadow-sm module-card">
 
-                <div class="card shadow-sm modulo-card">
+                    <div class="card-body">
 
-                    <div class="card-body text-center">
+                        <h4>
+                            Pagos
+                        </h4>
 
-                        <div>
-
-                            <h4>
-                                Pagos
-                            </h4>
-
-                            <p class="text-muted">
-                                Administración de pagos
-                                asociados a reservaciones.
-                            </p>
-
-                        </div>
+                        <p class="text-muted">
+                            Control de los pagos asociados
+                            a las reservaciones.
+                        </p>
 
                         <a
                             href="pagos.html"
                             class="btn btn-primary">
 
-                            Ingresar
+                            Gestionar pagos
 
                         </a>
 
@@ -232,104 +357,27 @@
             </div>
 
 
-            <!-- DESTINOS -->
+            <!-- OPINIONES -->
+            <div class="col-md-6 col-lg-3">
 
-            <div class="col-md-4">
+                <div class="card shadow-sm module-card">
 
-                <div class="card shadow-sm modulo-card">
+                    <div class="card-body">
 
-                    <div class="card-body text-center">
+                        <h4>
+                            Opiniones
+                        </h4>
 
-                        <div>
-
-                            <h4>
-                                Destinos
-                            </h4>
-
-                            <p class="text-muted">
-                                Administración de los
-                                destinos espaciales.
-                            </p>
-
-                        </div>
+                        <p class="text-muted">
+                            Consulte y administre las
+                            opiniones de los clientes.
+                        </p>
 
                         <a
-                            href="destinos.html"
+                            href="opiniones.html"
                             class="btn btn-primary">
 
-                            Ingresar
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- NAVES -->
-
-            <div class="col-md-4">
-
-                <div class="card shadow-sm modulo-card">
-
-                    <div class="card-body text-center">
-
-                        <div>
-
-                            <h4>
-                                Naves
-                            </h4>
-
-                            <p class="text-muted">
-                                Gestión de las naves
-                                disponibles para los viajes.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="naves.html"
-                            class="btn btn-primary">
-
-                            Ingresar
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- ACTIVIDADES -->
-
-            <div class="col-md-4">
-
-                <div class="card shadow-sm modulo-card">
-
-                    <div class="card-body text-center">
-
-                        <div>
-
-                            <h4>
-                                Actividades
-                            </h4>
-
-                            <p class="text-muted">
-                                Gestión de actividades
-                                disponibles en los destinos.
-                            </p>
-
-                        </div>
-
-                        <a
-                            href="actividades.html"
-                            class="btn btn-primary">
-
-                            Ingresar
+                            Gestionar opiniones
 
                         </a>
 
@@ -341,23 +389,317 @@
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- FOOTER -->
+    <!-- VIAJES -->
 
-    <footer class="bg-dark text-light text-center py-3">
+    <section class="mb-5">
 
-        <p class="mb-0">
-            Nova Expeditions - Sistema de Gestión
+        <p class="category">
+            Gestión de Viajes
         </p>
 
-    </footer>
+        <h3 class="section-title">
+            Experiencias y servicios
+        </h3>
+
+        <div class="row g-4">
+
+            <!-- PAQUETES -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card shadow-sm module-card">
+
+                    <div class="card-body">
+
+                        <h4>
+                            Paquetes
+                        </h4>
+
+                        <p class="text-muted">
+                            Configure los paquetes turísticos
+                            disponibles para los clientes.
+                        </p>
+
+                        <a
+                            href="paquetes.html"
+                            class="btn btn-primary">
+
+                            Gestionar paquetes
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
 
 
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js">
-    </script>
+            <!-- DESTINOS -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card shadow-sm module-card">
+
+                    <div class="card-body">
+
+                        <h4>
+                            Destinos
+                        </h4>
+
+                        <p class="text-muted">
+                            Administración de destinos
+                            disponibles para los viajes.
+                        </p>
+
+                        <a
+                            href="destinos.html"
+                            class="btn btn-primary">
+
+                            Gestionar destinos
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIVIDADES -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card shadow-sm module-card">
+
+                    <div class="card-body">
+
+                        <h4>
+                            Actividades
+                        </h4>
+
+                        <p class="text-muted">
+                            Gestione las experiencias y
+                            actividades de cada destino.
+                        </p>
+
+                        <a
+                            href="actividades.html"
+                            class="btn btn-primary">
+
+                            Gestionar actividades
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HOTELES -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card shadow-sm module-card">
+
+                    <div class="card-body">
+
+                        <h4>
+                            Hoteles
+                        </h4>
+
+                        <p class="text-muted">
+                            Administración de alojamientos
+                            asociados a los viajes.
+                        </p>
+
+                        <a
+                            href="hoteles.html"
+                            class="btn btn-primary">
+
+                            Gestionar hoteles
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OPERACIONES -->
+
+    <section>
+
+        <p class="category">
+            Operaciones Espaciales
+        </p>
+
+        <h3 class="section-title">
+            Recursos y personal
+        </h3>
+
+        <div class="row g-4">
+
+            <!-- NAVES -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card shadow-sm module-card">
+
+                    <div class="card-body">
+
+                        <h4>
+                            Naves
+                        </h4>
+
+                        <p class="text-muted">
+                            Control de las naves utilizadas
+                            para las expediciones.
+                        </p>
+
+                        <a
+                            href="naves.html"
+                            class="btn btn-primary">
+
+                            Gestionar naves
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PILOTOS -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card shadow-sm module-card">
+
+                    <div class="card-body">
+
+                        <h4>
+                            Pilotos
+                        </h4>
+
+                        <p class="text-muted">
+                            Administración de pilotos
+                            asignados a las expediciones.
+                        </p>
+
+                        <a
+                            href="pilotos.html"
+                            class="btn btn-primary">
+
+                            Gestionar pilotos
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEGUROS -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card shadow-sm module-card">
+
+                    <div class="card-body">
+
+                        <h4>
+                            Seguros
+                        </h4>
+
+                        <p class="text-muted">
+                            Gestión de coberturas y seguros
+                            asociados a los viajes.
+                        </p>
+
+                        <a
+                            href="seguros.html"
+                            class="btn btn-primary">
+
+                            Gestionar seguros
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMPLEADOS -->
+            <div class="col-md-6 col-lg-3">
+
+                <div class="card shadow-sm module-card">
+
+                    <div class="card-body">
+
+                        <h4>
+                            Empleados
+                        </h4>
+
+                        <p class="text-muted">
+                            Administración del personal
+                            operativo y administrativo.
+                        </p>
+
+                        <a
+                            href="empleados.html"
+                            class="btn btn-primary">
+
+                            Gestionar empleados
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="bg-dark text-light py-4">
+
+    <div class="container text-center">
+
+        <strong>
+            Nova Expeditions
+        </strong>
+
+        <div class="small text-secondary mt-1">
+            Sistema Centralizado de Gestión de Viajes Espaciales
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js">
+</script>
+
+<script src="js/index.js"></script>
 
 </body>
 

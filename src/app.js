@@ -11,6 +11,11 @@ const pagoRoutes = require('./routes/pagoRoutes');
 const destinoRoutes = require('./routes/destinoRoutes');
 const naveRoutes = require('./routes/naveRoutes');
 const actividadRoutes = require('./routes/actividadRoutes');
+const pilotoRoutes = require('./routes/pilotoRoutes');
+const hotelRoutes = require('./routes/hotelRoutes');
+const seguroRoutes = require('./routes/seguroRoutes');
+const empleadoRoutes = require('./routes/empleadoRoutes');
+const opinionRoutes = require('./routes/opinionRoutes');
 
 const app = express();
 
@@ -32,6 +37,11 @@ app.use('/api/pagos', pagoRoutes);
 app.use('/api/destinos', destinoRoutes);
 app.use('/api/naves', naveRoutes);
 app.use('/api/actividades', actividadRoutes);
+app.use('/api/pilotos', pilotoRoutes);
+app.use('/api/hoteles', hotelRoutes);
+app.use('/api/seguros', seguroRoutes);
+app.use('/api/empleados', empleadoRoutes);
+app.use('/api/opiniones', opinionRoutes);
 
 // Ruta de prueba
 app.get('/', (req, res) => {

@@ -10,6 +10,11 @@ const duracionDias = document.getElementById('duracionDias');
 const precio = document.getElementById('precio');
 const estado = document.getElementById('estado');
 const incluye = document.getElementById('incluye');
+const pilotoRoutes = require('./routes/pilotoRoutes');
+const hotelRoutes = require('./routes/hotelRoutes');
+const seguroRoutes = require('./routes/seguroRoutes');
+const empleadoRoutes = require('./routes/empleadoRoutes');
+const opinionRoutes = require('./routes/opinionRoutes');
 
 const tablaPaquetes = document.getElementById('tablaPaquetes');
 const formTitulo = document.getElementById('formTitulo');
@@ -280,3 +285,10 @@ function mostrarAlerta(mensaje, tipo) {
         </div>
     `;
 }
+
+
+app.use('/api/pilotos', pilotoRoutes);
+app.use('/api/hoteles', hotelRoutes);
+app.use('/api/seguros', seguroRoutes);
+app.use('/api/empleados', empleadoRoutes);
+app.use('/api/opiniones', opinionRoutes);
